@@ -20,6 +20,11 @@ public abstract class BaseActivity extends AppCompatActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /**
+         * 封装简单的标题栏不走
+         * 给基类绑定一个空的打的布局 在这个布局中包裹好标题栏
+         * 将getLayout 方法获得每个子类的布局
+         */
         setContentView(getLayout());
         initView();
         initDate();
@@ -40,5 +45,15 @@ public abstract class BaseActivity extends AppCompatActivity{
         //界面跳转动画
 
     }
+    /**
+     * 跳转String
+     */
 
+
+    /**
+     * 跳转int
+     */
+    /**
+     * 跳转其他
+     */
 }
