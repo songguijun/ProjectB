@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="gift.lin.lanou.com.okreviewdemo.MainActivity">
+    <Button
+        android:id="@+id/simple_get_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="普通get请求"/>
+    <Button
+        android:id="@+id/asynv_get_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="异步get请求"/>
+    <Button
+        android:id="@+id/header_get_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="带请求头get请求"/>
+
+    <Button
+        android:id="@+id/post_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="post请求"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#f03"/>
+
+    <TextView
+        android:id="@+id/show_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="10"
+        android:ellipsize="end"
+        android:text="Hello World!" />
+</LinearLayout>
