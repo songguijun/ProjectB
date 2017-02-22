@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="200dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="2.5dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:id="@+id/iv_item_home_listview_gridview"
+        android:src="@mipmap/ic_launcher"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:maxLines="1"
+        android:text="一百种孤独的理由  官方版"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="#111"
+        android:gravity="center_vertical"
+        android:id="@+id/tv_item_home_name"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="郭美美"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_vertical"
+        android:textSize="12sp"
+        android:id="@+id/tv_item_home_singer"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="12sp"
+            android:gravity="center_vertical"
+            android:text="播放次数: "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="111111"
+            android:textSize="12sp"
+            android:gravity="center_vertical"
+            android:id="@+id/tv_item_home_num"/>
+
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
