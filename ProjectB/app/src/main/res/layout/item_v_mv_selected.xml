@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        >
+        <ImageView
+            android:id="@+id/v_mv_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:id="@+id/v_mv_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="#fff"
+            android:textSize="60sp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="30dp"
+            android:layout_alignParentBottom="true"/>
+        <TextView
+            android:id="@+id/v_mv_blacknum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="94.34"
+            android:layout_margin="10dp"
+            android:textColor="#fff"
+            android:layout_alignParentBottom="true"/>
+        <TextView
+            android:id="@+id/v_mv_radnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.036"
+            android:textColor="#fff"
+            android:layout_toRightOf="@id/v_mv_blacknum"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:id="@+id/v_mv_skin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skin to skin官方的"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@id/v_mv_num"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#fff"
+            />
+        <TextView
+            android:id="@+id/v_mv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="鹿晗"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="170dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#fff"
+            />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

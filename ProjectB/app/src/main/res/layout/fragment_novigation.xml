@@ -11,12 +11,12 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="30dp"
+            android:layout_height="25dp"
             android:layout_weight="6"
             android:background="@drawable/shape_seek"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             />
         <ImageView
             android:layout_width="0dp"
@@ -38,13 +38,6 @@
         android:layout_margin="10dp"
         android:textColor="#b1adad"/>
 
-        <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#b1adad"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        />
 
         <GridView
             android:id="@+id/gird_one"
@@ -55,42 +48,62 @@
             android:numColumns="4"
             android:scrollbars="none"
             />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1dede"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:orientation="horizontal"
             android:layout_marginLeft="20dp">
 
             <ImageView
+                android:id="@+id/mv_music"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@mipmap/n_mvp"
-                android:id="@+id/imageView3" />
+               />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/icon_more"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="MV"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:textColor="#111"
-                android:layout_marginTop="10dp"/>
-        </LinearLayout>
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/mv_music"
+                android:id="@+id/textView" />
+        </RelativeLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#b1adad"
+            android:background="#e1dede"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             />
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:orientation="horizontal"
             android:layout_marginLeft="20dp">
             <ImageView
+                android:id="@+id/music_people"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@mipmap/n_yiren"/>
@@ -98,15 +111,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="艺人"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:textColor="#111"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/music_people"
                 android:layout_marginTop="10dp"/>
-        </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/icon_more"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"/>
+        </RelativeLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="6dp"
-            android:background="#e6e1e1"
+            android:background="#e1dede"
             />
         <TextView
             android:layout_width="match_parent"
@@ -116,7 +139,7 @@
             android:layout_marginTop="5dp"
             android:textColor="#b1adad"/>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:orientation="horizontal"
@@ -132,19 +155,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="音乐商城"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:textColor="#111"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/imageView"
                 android:layout_marginTop="10dp"/>
-        </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/icon_more"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                />
+        </RelativeLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#b1adad"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            />
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:orientation="horizontal"
@@ -152,28 +179,52 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@mipmap/n_yinyue"/>
+                android:background="@mipmap/n_yinyue"
+                android:id="@+id/music"
+                />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="音乐众筹"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:textColor="#111"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/music"
                 android:layout_marginTop="10dp"/>
-        </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/icon_more"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1dede"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="6dp"
-            android:background="#e6e1e1"
+            android:background="#e1dede"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="发现"
+            android:layout_centerVertical="true"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp"
             android:textColor="#b1adad"/>
-        <LinearLayout
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:orientation="horizontal"
@@ -183,25 +234,39 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@mipmap/n_baoyue"
-                android:id="@+id/imageView2" />
+                android:id="@+id/imageView_flow" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="包月流量"
-                android:textSize="15sp"
+                android:textSize="13sp"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
                 android:textColor="#111"
+                android:layout_toRightOf="@id/imageView_flow"
                 android:layout_marginTop="10dp"/>
-        </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/icon_more"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                />
+        </RelativeLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#b1adad"
+            android:background="#e1dede"
+
+
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             />
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:orientation="horizontal"
@@ -209,18 +274,30 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:id="@+id/tv"
                 android:background="@mipmap/n_mswh"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="StartTV"
-                android:textSize="15sp"
+                android:textSize="13sp"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
                 android:textColor="#111"
+                android:layout_toRightOf="@id/tv"
                 android:layout_marginTop="10dp"/>
-        </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/icon_more"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                />
+        </RelativeLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#e1dede"></LinearLayout>
+            android:background="#e1dede"/>
     </LinearLayout>
 </LinearLayout>
