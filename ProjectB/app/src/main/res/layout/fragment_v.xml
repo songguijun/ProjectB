@@ -2,5 +2,78 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#111"
+        android:layout_weight="1">
 
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
+
+            <RadioButton
+                android:id="@+id/rbtn_program_v"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7"
+                android:text="节目"
+                android:button="@null"
+                android:textColor="@color/colors_button"
+                android:textSize="15sp"
+                android:gravity="center"
+                />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:background="#b9b8b8"
+                android:layout_gravity="center_vertical"/>
+
+            <RadioButton
+                android:id="@+id/rbtn_MV_v"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="MV作品榜"
+                android:gravity="center"
+                android:button="@null"
+                android:checked="true"
+                android:textColor="@color/colors_button"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/rbtn_special_v"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="专题榜"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/colors_button"
+                android:textSize="15sp"
+                />
+
+            <RadioButton
+                android:layout_marginRight="10dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="China V Chart"
+                android:gravity="center"
+                android:button="@null"
+                android:textColor="@color/colors_button"
+                android:textSize="15sp"
+                android:id="@+id/rbtn_CV"/>
+        </RadioGroup>
+
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/replace_v"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        />
 </LinearLayout>

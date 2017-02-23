@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="gift.songguijun.lanou.com.projectb">
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
+=======
+<uses-permission android:name="android.permission.INTERNET"/>
+>>>>>>> c0851518032d406f4551211ea7f3956a3c8e5eab
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
