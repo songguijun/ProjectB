@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context="gift.songguijun.lanou.com.projectb.MainActivity">
 
+
     <FrameLayout
         android:id="@+id/replace"
         android:layout_width="match_parent"
@@ -14,11 +15,12 @@
         android:layout_weight="1"
         />
 
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="#111"
-        >
+        android:layout_height="50dp"
+        android:background="#111">
+
 
         <RadioGroup
             android:layout_width="match_parent"
@@ -30,54 +32,53 @@
                 android:id="@+id/rbt_home"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:button="@null"
                 android:checked="true"
-                android:layout_marginTop="5dp"
-                android:drawableTop="@drawable/button_home"
-                 />
+                android:drawableTop="@drawable/button_home" />
 
             <RadioButton
                 android:id="@+id/rbt_navigation"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:button="@null"
-                android:layout_marginTop="5dp"
                 android:drawableTop="@drawable/button_navigation"
-                android:gravity="center"
-                />
+                android:gravity="center" />
+
             <RadioButton
                 android:id="@+id/rbt_V_notice"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:button="@null"
-                android:layout_marginTop="5dp"
                 android:drawableTop="@drawable/button_v"
-                android:gravity="center"
-                />
+                android:gravity="center" />
+
             <RadioButton
                 android:id="@+id/rbt_subscibe"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:button="@null"
-                android:layout_marginTop="5dp"
                 android:drawableTop="@drawable/button_subscibe"
-                android:gravity="center"
-                />
+                android:gravity="center" />
+
             <RadioButton
                 android:id="@+id/rbt_mine"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:button="@null"
-                android:layout_marginTop="5dp"
                 android:drawableTop="@drawable/button_mine"
-                android:gravity="center"
-                />
+                android:gravity="center" />
         </RadioGroup>
     </RelativeLayout>
+
 
 </LinearLayout>

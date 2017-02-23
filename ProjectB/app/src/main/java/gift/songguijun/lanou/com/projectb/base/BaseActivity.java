@@ -1,5 +1,10 @@
 package gift.songguijun.lanou.com.projectb.base;
 
+import android.support.v7.app.AppCompatActivity;
+
+
+
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -57,3 +62,4 @@ public abstract class BaseActivity extends AppCompatActivity{
      * 跳转其他
      */
 }
+
