@@ -9,6 +9,7 @@ import gift.songguijun.lanou.com.projectb.R;
 import gift.songguijun.lanou.com.projectb.base.BaseFragment;
 import gift.songguijun.lanou.com.projectb.v.china.ChinaFragment;
 import gift.songguijun.lanou.com.projectb.v.program.ProgramFragment;
+import gift.songguijun.lanou.com.projectb.v.special.SpecialFragment;
 import gift.songguijun.lanou.com.projectb.v.vmv.MvFragment;
 
 /**
