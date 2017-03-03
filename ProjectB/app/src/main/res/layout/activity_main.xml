@@ -20,14 +20,10 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#111">
-
-
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
-
             <RadioButton
                 android:id="@+id/rbt_home"
                 android:layout_width="0dp"
@@ -67,7 +63,6 @@
                 android:button="@null"
                 android:drawableTop="@drawable/button_subscibe"
                 android:gravity="center" />
-
             <RadioButton
                 android:id="@+id/rbt_mine"
                 android:layout_width="0dp"
