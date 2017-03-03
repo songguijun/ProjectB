@@ -27,6 +27,7 @@ public class HomeFragment extends Fragment {
     private ListView lvHome ;
     private Retrofit retrofit ;
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
