@@ -9,6 +9,7 @@ import java.util.Map;
 import gift.songguijun.lanou.com.projectb.R;
 import gift.songguijun.lanou.com.projectb.base.BaseFragment;
 import gift.songguijun.lanou.com.projectb.bean.SpecialBean;
+import gift.songguijun.lanou.com.projectb.util.Constant;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -21,16 +22,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HinterlandFragment extends BaseFragment {
     private ListView listView;
-    String Url = "http://mapiv2.yinyuetai.com/album/trend_rank.json?offset=0&size=20&type=ml";
+    String Url = Constant.V_SPECIAL_HINTERLAND_URL;
     private Retrofit retrofit;
-    final String key1 = "App-Id";
-    final String value1 = "10101045";
+    final String key1 = Constant.HOMEKEY_ONE;
+    final String value1 = Constant.HOMEVALUE_ONE;
 
-    final String key2 = "Device-Id";
-    final String value2 = "f1ef0a488a13203667bed4e6565403e1";
+    final String key2 = Constant.HOMEKEY_TWO;
+    final String value2 = Constant.HOMEVALUE_TWO;
 
-    final String key3 = "Device-V";
-    final String value3 = "aU9TXzEwLjEuMV8xMjQyKjIyMDhfMTAwMDAxMDAwX2lQaG9uZTcsMQ==";
+    final String key3 = Constant.HOMEKEY_THREE;
+    final String value3 = Constant.HOMEVALUE_THREE;
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_special_hinterland;

@@ -10,6 +10,7 @@ import java.util.Map;
 import gift.songguijun.lanou.com.projectb.R;
 import gift.songguijun.lanou.com.projectb.base.BaseFragment;
 import gift.songguijun.lanou.com.projectb.bean.ProgramBean;
+import gift.songguijun.lanou.com.projectb.util.Constant;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -23,16 +24,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ProgramFragment extends BaseFragment {
     private RecyclerView recyclerView;
 
-    String Url = "http://mapiv2.yinyuetai.com/component/prefecture.json?type=5";
+    String Url = Constant.V_PROGRAM_URL;
     private Retrofit retrofit;
-    final String key1 = "App-Id";
-    final String value1 = "10101045";
+    final String key1 = Constant.HOMEKEY_ONE;
+    final String value1 = Constant.HOMEVALUE_ONE;
 
-    final String key2 = "Device-Id";
-    final String value2 = "f1ef0a488a13203667bed4e6565403e1";
+    final String key2 = Constant.HOMEKEY_TWO;
+    final String value2 = Constant.HOMEVALUE_TWO;
 
-    final String key3 = "Device-V";
-    final String value3 = "aU9TXzEwLjEuMV8xMjQyKjIyMDhfMTAwMDAxMDAwX2lQaG9uZTcsMQ==";
+    final String key3 = Constant.HOMEKEY_THREE;
+    final String value3 = Constant.HOMEVALUE_THREE;
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_v_program;
@@ -46,7 +47,7 @@ public class ProgramFragment extends BaseFragment {
 
     @Override
     protected void initData() {
-        retrofit = new Retrofit.Builder().baseUrl("http://mapiv2.yinyuetai.com/").addConverterFactory(GsonConverterFactory.create()).build();
+        retrofit = new Retrofit.Builder().baseUrl(Constant.BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
         ProgramService service = retrofit.create(ProgramService.class);
         Map<String,String> map = new HashMap<>();
         map.put(key1,value1);
