@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/surfaceView1"
         android:layout_gravity="bottom"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="@dimen/one_hundred_and_thirty"
         android:background="#7f000000"
         android:orientation="vertical">
 
@@ -31,15 +31,15 @@
             android:orientation="horizontal">
 
             <RelativeLayout
-                android:layout_width="40dp"
+                android:layout_width="@dimen/forty"
                 android:layout_height="match_parent">
 
                 <ImageView
                     android:id="@+id/btnPlayUrl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="@dimen/ten"
+                    android:layout_marginTop="@dimen/eight"
                     android:background="@mipmap/video_play_img" />
                 <ImageView
                     android:id="@+id/btn_puse"
@@ -55,8 +55,8 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="3"
                 android:max="100"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp" />
+                android:paddingLeft="@dimen/ten"
+                android:paddingRight="@dimen/ten" />
 
             <TextView
                 android:id="@+id/video_tv_time"
@@ -87,14 +87,25 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:background="@mipmap/video_control_danmu_img_p" />
-
+<RelativeLayout
+    android:layout_width="0dp"
+    android:layout_gravity="center_vertical"
+    android:layout_height="wrap_content"
+    android:layout_weight="0.5">
             <ImageView
                 android:id="@+id/btn"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
                 android:background="@mipmap/video_control_expend"
                 android:text="横屏" />
+            <ImageView
+                android:id="@+id/btn_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten"
+                android:layout_marginLeft="@dimen/five"
+                android:background="@mipmap/live_small_screen_btn_normal"/>
+</RelativeLayout>
         </LinearLayout>
 
     </LinearLayout>
@@ -102,7 +113,7 @@
     <RelativeLayout
         android:id="@+id/video_relative"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/forty"
         android:background="#7f000000"
         android:orientation="horizontal">
 
@@ -136,14 +147,14 @@
             android:id="@+id/iv_play_pause"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="15dp"
+            android:padding="@dimen/fifteen"
             android:src="@mipmap/btn_pause" />
 
         <TextView
             android:id="@+id/tv_playing_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="@dimen/fifteen"
             android:text="00:00"
             android:textColor="@android:color/darker_gray"
             android:textSize="15sp" />
@@ -152,14 +163,14 @@
             android:id="@+id/sb_video_progress"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="@dimen/five"
             android:layout_weight="2" />
 
         <TextView
             android:id="@+id/tv_total_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="@dimen/five"
             android:text="00:00"
             android:textColor="@android:color/darker_gray"
             android:textSize="15sp" />
@@ -168,15 +179,15 @@
             android:id="@+id/iv_full_screen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:padding="15dp"
+            android:layout_marginLeft="@dimen/fifteen"
+            android:padding="@dimen/fifteen"
             android:src="@mipmap/btn_full_screen" />
     </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/gesture_volume_layout"
-        android:layout_width="120dip"
-        android:layout_height="100dip"
+        android:layout_width="@dimen/one_hundred_and_twenty"
+        android:layout_height="@dimen/one_hundred"
         android:layout_centerInParent="true"
         android:gravity="center"
         android:visibility="gone">
@@ -227,8 +238,8 @@
 
     <RelativeLayout
         android:id="@+id/gesture_progress_layout"
-        android:layout_width="120dip"
-        android:layout_height="100dip"
+        android:layout_width="@dimen/one_hundred_and_twenty"
+        android:layout_height="@dimen/one_hundred"
         android:layout_centerInParent="true"
         android:gravity="center"
         android:visibility="gone">

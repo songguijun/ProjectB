@@ -1,4 +1,4 @@
-package gift.songguijun.lanou.com.projectb.home;
+package gift.songguijun.lanou.com.projectb.bean;
 
 import java.util.List;
 

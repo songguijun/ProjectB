@@ -8,7 +8,7 @@
         android:id="@+id/root_layout"
         layout="@layout/media_player"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="@dimen/two_hundred" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -19,17 +19,17 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="@dimen/fifty">
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="@dimen/fifty"
                     android:orientation="horizontal">
                     <ImageView
                         android:id="@+id/barrage"
                         android:layout_width="0dp"
-                        android:layout_height="35dp"
+                        android:layout_height="@dimen/thirty_five"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="@dimen/ten"
                         android:layout_weight="5"
                         android:background="@drawable/barrage" />
                     <TextView
@@ -46,8 +46,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="@dimen/twenty"
+                    android:layout_marginTop="@dimen/fifteen"
                     android:text="发个弹幕呗"
                     android:textColor="#fff"
                     android:textSize="15sp" />
@@ -56,8 +56,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="70dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="@dimen/seventy"
+                    android:layout_marginTop="@dimen/fifteen"
                     android:text="50"
                     android:textColor="#fff"
                     android:textSize="15sp" />
@@ -69,16 +69,16 @@
                 />
            <RelativeLayout
                android:layout_width="match_parent"
-               android:layout_height="60dp">
+               android:layout_height="@dimen/sixty">
                <LinearLayout
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:orientation="horizontal">
                <de.hdodenhof.circleimageview.CircleImageView
                    android:id="@+id/iv_video_second_head"
-                   android:layout_width="50dp"
-                   android:layout_height="50dp"
-                   android:layout_margin="5dp"/>
+                   android:layout_width="@dimen/fifty"
+                   android:layout_height="@dimen/fifty"
+                   android:layout_margin="@dimen/five"/>
                    <TextView
                        android:id="@+id/tv_video_second_name"
                        android:layout_width="wrap_content"
@@ -90,12 +90,12 @@
                </LinearLayout>
 
                <ImageView
-                   android:layout_width="80dp"
-                   android:layout_height="25dp"
+                   android:layout_width="@dimen/eighty"
+                   android:layout_height="@dimen/twenty_five"
                    android:background="@drawable/gift"
                    android:layout_alignParentRight="true"
-                   android:layout_marginTop="20dp"
-                   android:layout_marginRight="10dp"
+                   android:layout_marginTop="@dimen/twenty"
+                   android:layout_marginRight="@dimen/ten"
                    />
                <TextView
                    android:layout_width="wrap_content"
@@ -103,19 +103,19 @@
                    android:text="会员打榜翻倍"
                    android:layout_alignParentRight="true"
                    android:textSize="10sp"
-                   android:layout_marginTop="27dp"
-                   android:layout_marginRight="20dp"
+                   android:layout_marginTop="@dimen/thirty"
+                   android:layout_marginRight="@dimen/twenty"
                    android:textColor="#76c96b"/>
            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="@dimen/thirty"
                 android:orientation="horizontal">
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="5"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/five"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
                 <TextView
@@ -124,7 +124,7 @@
                     android:text="播放次数:"
                     android:textSize="12sp"
                     android:textColor="#fff"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginLeft="@dimen/ten"/>
                 <TextView
                     android:id="@+id/tv_second_like"
                     android:layout_width="wrap_content"
@@ -132,42 +132,42 @@
                     android:text="加载中~~~"
                     android:textSize="12sp"
                     android:textColor="#fff"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="@dimen/ten"
                     />
                 </LinearLayout>
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="@dimen/ten"
                     android:background="@mipmap/video_comment_img"
                     />
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="@dimen/ten"
                     android:background="@mipmap/video_control_collect"
                     />
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="@dimen/ten"
                     android:background="@mipmap/video_control_add_playlist"
                     />
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="@dimen/ten"
                     android:background="@mipmap/video_control_download"
                     />
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="@dimen/ten"
                     android:background="@mipmap/video_control_share_img"
                     />
             </LinearLayout>
@@ -179,7 +179,7 @@
                 android:maxLines="2"
                 android:text="加载中~~~"
                 android:textColor="#fff"
-                android:layout_margin="10dp"/>
+                android:layout_margin="@dimen/ten"/>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -188,12 +188,12 @@
                     android:layout_height="wrap_content"
                     android:background="@mipmap/down_triangle"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"/>
+                    android:layout_marginRight="@dimen/ten"/>
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="@dimen/ten">
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -204,7 +204,7 @@
                     android:text="作者:"
                     android:textSize="12sp"
                     android:textColor="#fff"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginLeft="@dimen/ten"/>
                     <TextView
                         android:id="@+id/tv_second_author"
                         android:layout_width="wrap_content"
@@ -219,12 +219,12 @@
                     android:text="加载中~~~"
                     android:textColor="#fff"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"/>
+                    android:layout_marginRight="@dimen/ten"/>
             </RelativeLayout>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/five"
                 android:background="#fff"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -239,14 +239,14 @@
                     android:text="大家都在看:"
                     android:textColor="#fff"
                     android:textSize="10sp"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="@dimen/ten"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="更多>>"
                     android:textColor="#fff"
                     android:layout_alignParentRight="true"
-                    android:layout_margin="10dp"
+                    android:layout_margin="@dimen/ten"
                     android:textSize="10sp"/>
             </RelativeLayout>
             <android.support.v7.widget.RecyclerView
@@ -257,7 +257,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/five"
                 android:background="#fff"/>
         <LinearLayout
             android:layout_width="match_parent"
@@ -272,20 +272,20 @@
                 android:text="同一人其他MV:"
                 android:textColor="#fff"
                 android:textSize="10sp"
-                android:layout_margin="10dp"/>
+                android:layout_margin="@dimen/ten"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="更多>>"
                 android:textColor="#fff"
                 android:layout_alignParentRight="true"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/ten"
                 android:textSize="10sp"/>
             </RelativeLayout>
             <GridView
                 android:id="@+id/artistOther_girdView"
                 android:layout_width="match_parent"
-                android:layout_height="320dp"
+                android:layout_height="@dimen/three_hundred_and_twenty"
                 android:horizontalSpacing="1dp"
                 android:verticalSpacing="1dp"
                 android:numColumns="2"
@@ -295,7 +295,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/five"
                 android:background="#fff"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -310,20 +310,20 @@
                         android:text="收录这首MV的悦单:"
                         android:textColor="#fff"
                         android:textSize="10sp"
-                        android:layout_margin="10dp"/>
+                        android:layout_margin="@dimen/ten"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="更多>>"
                         android:textColor="#fff"
                         android:layout_alignParentRight="true"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimen/ten"
                         android:textSize="10sp"/>
                 </RelativeLayout>
                 <GridView
                     android:id="@+id/relatedPlayList_girdView"
                     android:layout_width="match_parent"
-                    android:layout_height="145dp"
+                    android:layout_height="@dimen/one_hundred_and_forty_five"
                     android:horizontalSpacing="1dp"
                     android:verticalSpacing="1dp"
                     android:numColumns="3"
@@ -348,20 +348,20 @@
                         android:text="猜你喜欢:"
                         android:textColor="#fff"
                         android:textSize="10sp"
-                        android:layout_margin="10dp"/>
+                        android:layout_margin="@dimen/ten"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="更多>>"
                         android:textColor="#fff"
                         android:layout_alignParentRight="true"
-                        android:layout_margin="10dp"
+                        android:layout_margin="@dimen/ten"
                         android:textSize="10sp"/>
                 </RelativeLayout>
                 <GridView
                     android:id="@+id/related_girdView"
                     android:layout_width="match_parent"
-                    android:layout_height="320dp"
+                    android:layout_height="@dimen/three_hundred_and_twenty"
                     android:horizontalSpacing="1dp"
                     android:verticalSpacing="1dp"
                     android:numColumns="2"
@@ -371,7 +371,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/five"
                 android:background="#fff"/>
         </LinearLayout>
     </ScrollView>

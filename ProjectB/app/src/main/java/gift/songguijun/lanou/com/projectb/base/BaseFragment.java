@@ -13,6 +13,10 @@ import android.widget.Toast;
  * Created by dllo on 17/2/22.
  */
 
+/**
+ * Fragment基类
+ */
+
 public abstract class BaseFragment extends Fragment {
     protected Context mContext;
     @Nullable

@@ -7,12 +7,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@mipmap/album_chart_left"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="@dimen/ten"/>
     <ImageView
         android:id="@+id/speical_iv"
-        android:layout_width="90dp"
-        android:layout_height="95dp"
-        android:layout_marginTop="13dp"
+        android:layout_width="@dimen/ninety"
+        android:layout_height="@dimen/ninety"
+        android:layout_marginTop="@dimen/twelve"
         android:scaleType="fitXY"/>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,22 +22,25 @@
         android:orientation="vertical"
         android:gravity="center_vertical"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp">
+        android:layout_marginLeft="@dimen/ten">
 
         <TextView
             android:id="@+id/special_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="dasdadsasd"
-            android:maxLength="10"
-            android:textSize="13sp"
+            android:maxLines="1"
+            android:maxLength="12"
+            android:ellipsize="end"
+            android:textSize="10sp"
             android:textColor="#111"/>
+
         <TextView
             android:id="@+id/special_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1sad"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="@dimen/ten"/>
     </LinearLayout>
         <TextView
             android:id="@+id/special_num"
@@ -45,10 +48,10 @@
             android:layout_height="wrap_content"
             android:text="1"
             android:textSize="30sp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginLeft="@dimen/fifty"
+            android:layout_marginTop="@dimen/forty"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="@dimen/thirty"
             />
 
     </RelativeLayout>

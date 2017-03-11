@@ -11,19 +11,19 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="30dp"
+            android:layout_height="@dimen/thirty"
             android:layout_weight="7"
             android:background="@drawable/shape_seek"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginLeft="@dimen/twenty"
+            android:layout_marginRight="@dimen/ten"
+            android:layout_marginTop="@dimen/five"
             />
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="@dimen/forty"
             android:layout_weight="1"
             android:background="@mipmap/title_play_history_btn_normal"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="@dimen/ten"/>
     </LinearLayout>
     <android.support.design.widget.TabLayout
         android:layout_width="match_parent"
@@ -33,15 +33,16 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@mipmap/leimu">
     <android.support.v4.view.ViewPager
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:id="@+id/vp_subscibe"/>
         <FrameLayout
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_width="@dimen/three_hundred"
+            android:layout_height="@dimen/three_hundred"
             android:layout_centerInParent="true"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true">
@@ -50,82 +51,82 @@
                 android:layout_height="match_parent">
             <ImageView
                 android:id="@+id/imageview1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:paddingTop="5dp"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:paddingLeft="@dimen/five"
+                android:paddingRight="@dimen/five"
+                android:paddingTop="@dimen/five"
                 android:src="@mipmap/lolone"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 />
             <ImageView
                 android:id="@+id/imageview2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:paddingLeft="@dimen/five"
+                android:paddingRight="@dimen/five"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:paddingTop="5dp"
+                android:paddingTop="@dimen/five"
                 android:src="@mipmap/loltwo" />
             <ImageView
                 android:id="@+id/imageview3"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:paddingLeft="5dp"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:paddingLeft="@dimen/five"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:paddingRight="5dp"
-                android:paddingTop="5dp"
+                android:paddingRight="@dimen/five"
+                android:paddingTop="@dimen/five"
                 android:src="@mipmap/lolthree" />
             <ImageView
                 android:id="@+id/imageview4"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:paddingLeft="@dimen/five"
+                android:paddingRight="@dimen/five"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:paddingTop="5dp"
+                android:paddingTop="@dimen/five"
                 android:src="@mipmap/lolfour" />
             <ImageView
                 android:id="@+id/imageview5"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:paddingLeft="@dimen/five"
+                android:paddingRight="@dimen/five"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:paddingTop="5dp"
+                android:paddingTop="@dimen/five"
                 android:src="@mipmap/lolfive" />
             <ImageView
                 android:id="@+id/imageview6"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:paddingLeft="@dimen/five"
+                android:paddingRight="@dimen/five"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:paddingTop="5dp"
+                android:paddingTop="@dimen/five"
                 android:src="@mipmap/lolsix" />
             <ImageView
                 android:id="@+id/imageview7"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:paddingTop="5dp"
+                android:layout_width="@dimen/fifty"
+                android:layout_height="@dimen/fifty"
+                android:paddingLeft="@dimen/five"
+                android:paddingRight="@dimen/five"
+                android:paddingTop="@dimen/five"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:src="@mipmap/lolseven" />
             <ImageView
                 android:id="@+id/main"
-                android:layout_width="60dp"
+                android:layout_width="@dimen/sixty"
                 android:src="@mipmap/lolmaintwo"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:layout_height="60dp" />
+                android:layout_height="@dimen/sixty" />
             </RelativeLayout>
         </FrameLayout>
     </RelativeLayout>

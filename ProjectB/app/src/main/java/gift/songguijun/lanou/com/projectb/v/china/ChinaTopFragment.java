@@ -1,6 +1,8 @@
 package gift.songguijun.lanou.com.projectb.v.china;
 
+import android.content.Intent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.HashMap;
@@ -54,12 +56,20 @@ public class ChinaTopFragment extends BaseFragment{
         call.enqueue(new Callback<ChinaTopBean>() {
             @Override
             public void onResponse(Call<ChinaTopBean> call, Response<ChinaTopBean> response) {
-                ChinaTopBean bean = response.body();
+                final ChinaTopBean bean = response.body();
                 ChinaListViewTopAdapter adapter = new ChinaListViewTopAdapter(mContext);
                 adapter.setData(bean.getData().getVideos());
                 listView.setAdapter(adapter);
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent intent = new Intent(getContext(),ChinaActivity.class);
+                        String id = bean.getData().getVideos().get(i).getVideoId()+"";
+                        intent.putExtra("不爽",id);
+                        getContext().startActivity(intent);
+                    }
+                });
             }
-
             @Override
             public void onFailure(Call<ChinaTopBean> call, Throwable t) {
 

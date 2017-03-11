@@ -14,10 +14,15 @@ import android.widget.TextView;
 import java.util.List;
 
 import gift.songguijun.lanou.com.projectb.R;
+import gift.songguijun.lanou.com.projectb.bean.HomeBean;
 import gift.songguijun.lanou.com.projectb.video.VideoPlayerActivity;
 
 /**
  * Created by dllo on 17/2/21.
+ */
+
+/**
+ * 主页ListView适配器
  */
 
 public class HomeListviewAdapter extends BaseAdapter{

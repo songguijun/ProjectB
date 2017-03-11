@@ -13,11 +13,15 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import gift.songguijun.lanou.com.projectb.R;
+import gift.songguijun.lanou.com.projectb.bean.HomeBean;
 
 /**
  * Created by dllo on 17/2/21.
  */
 
+/**
+ * 主页ListView嵌套GirdView适配器
+ */
 public class HomeListviewGridviewAdapter extends BaseAdapter{
     private List<HomeBean.DataBeanX.DataBean> data ;
     private Context context ;

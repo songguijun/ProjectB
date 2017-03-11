@@ -1,6 +1,8 @@
 package gift.songguijun.lanou.com.projectb.v.special;
 
+import android.content.Intent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.HashMap;
@@ -53,10 +55,21 @@ public class HinterlandFragment extends BaseFragment {
         call.enqueue(new Callback<SpecialBean>() {
             @Override
             public void onResponse(Call<SpecialBean> call, Response<SpecialBean> response) {
-                SpecialBean bean = response.body();
+                final SpecialBean bean = response.body();
                 HinterlandListViewAdapter adapter = new HinterlandListViewAdapter(getContext());
                 adapter.setData(bean.getData().getVideos());
                 listView.setAdapter(adapter);
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent intent = new Intent(getContext(),HinterLandActivity.class);
+                        String title = bean.getData().getVideos().get(i).getTitle();
+                        String url = bean.getData().getVideos().get(i).getUrl();
+                        intent.putExtra("强大的标题",title);
+                        intent.putExtra("强大的网址",url);
+                        getContext().startActivity(intent);
+                    }
+                });
             }
 
             @Override

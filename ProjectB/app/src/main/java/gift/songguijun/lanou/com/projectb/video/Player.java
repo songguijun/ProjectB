@@ -16,6 +16,9 @@ import java.util.TimerTask;
  * Created by dllo on 17/2/27.
  */
 
+/**
+ * 视频播放器工具类
+ */
 public class Player implements MediaPlayer.OnBufferingUpdateListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnPreparedListener, SurfaceHolder.Callback {
     private int videoWidth;
     private int videoHeight;
@@ -147,6 +150,7 @@ public class Player implements MediaPlayer.OnBufferingUpdateListener, MediaPlaye
                 * mediaPlayer.getCurrentPosition() / mediaPlayer.getDuration();
 
     }
+
 
 
 }

@@ -1,6 +1,8 @@
 package gift.songguijun.lanou.com.projectb.v.vmv;
 
+import android.content.Intent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.HashMap;
@@ -9,6 +11,7 @@ import java.util.Map;
 import gift.songguijun.lanou.com.projectb.R;
 import gift.songguijun.lanou.com.projectb.base.BaseFragment;
 import gift.songguijun.lanou.com.projectb.bean.VMVBean;
+import gift.songguijun.lanou.com.projectb.video.MvVideoActivity;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -56,12 +59,20 @@ public class VMVSelectedFragment extends BaseFragment {
         call.enqueue(new Callback<VMVBean>() {
             @Override
             public void onResponse(Call<VMVBean> call, Response<VMVBean> response) {
-                VMVBean bean = response.body();
+                final VMVBean bean = response.body();
                 VMVListViewAdapter adapter = new VMVListViewAdapter(getContext());
                 adapter.setData(bean.getData().getVideos());
                 listView.setAdapter(adapter);
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent intent = new Intent(getContext(), MvVideoActivity.class);
+                        String name = bean.getData().getVideos().get(i).getVideoId()+"";
+                        intent.putExtra("我的天",name);
+                        startActivity(intent);
+                    }
+                });
             }
-
             @Override
             public void onFailure(Call<VMVBean> call, Throwable t) {
 

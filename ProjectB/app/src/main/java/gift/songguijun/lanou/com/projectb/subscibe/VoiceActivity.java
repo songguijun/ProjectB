@@ -23,6 +23,9 @@ import java.util.List;
 
 import gift.songguijun.lanou.com.projectb.R;
 
+/**
+ * 语音
+ */
 public class VoiceActivity extends AppCompatActivity {
     private RecognizerDialog iatDialog ;
     private EditText etText ;

@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 import gift.songguijun.lanou.com.projectb.R;
+import gift.songguijun.lanou.com.projectb.bean.HomeBean;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -23,15 +24,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by dllo on 17/2/20.
  */
 
+/**
+ * 主页
+ */
+
 public class HomeFragment extends Fragment {
-    private ListView lvHome ;
-    private Retrofit retrofit ;
+    private ListView lvHome;
+    private Retrofit retrofit;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_home,container,false);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_home, container, false);
         return view;
     }
 
@@ -54,21 +59,19 @@ public class HomeFragment extends Fragment {
         final String value3 = "QW5kcm9pZF81LjAuMl8xMDgwKjE5MjBfMTEwMDA5MDAwXyUyMlJlZG1pK05vdGUrMyUyMg==";
         retrofit = new Retrofit.Builder().baseUrl("http://mapiv2.yinyuetai.com/").addConverterFactory(GsonConverterFactory.create()).build();
         HomeListViewService service = retrofit.create(HomeListViewService.class);
-        Map<String , String> map = new HashMap<>();
-        map.put(key1 , value1);
-        map.put(key2 , value2);
-        map.put(key3 , value3);
-        Call<HomeBean> call = service.startRequest("component/prefecture.json?&type=1" , map);
+        Map<String, String> map = new HashMap<>();
+        map.put(key1, value1);
+        map.put(key2, value2);
+        map.put(key3, value3);
+        Call<HomeBean> call = service.startRequest("component/prefecture.json?&type=1", map);
         call.enqueue(new Callback<HomeBean>() {
             @Override
             public void onResponse(Call<HomeBean> call, Response<HomeBean> response) {
                 HomeBean bean = response.body();
                 List<HomeBean.DataBeanX> list = bean.getData();
-                    HomeListviewAdapter listAdapter = new HomeListviewAdapter(getContext());
+                HomeListviewAdapter listAdapter = new HomeListviewAdapter(getContext());
                 listAdapter.setData(list);
-                    lvHome.setAdapter(listAdapter);
-
-
+                lvHome.setAdapter(listAdapter);
             }
 
             @Override

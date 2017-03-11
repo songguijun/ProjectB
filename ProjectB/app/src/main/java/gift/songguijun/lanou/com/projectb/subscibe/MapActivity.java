@@ -1,7 +1,6 @@
 package gift.songguijun.lanou.com.projectb.subscibe;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
@@ -22,12 +21,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import gift.songguijun.lanou.com.projectb.R;
-import gift.songguijun.lanou.com.projectb.base.BaseActivity;
 
 /**
  * Created by dllo on 17/3/2.
  */
 
+/**
+ * 地图
+ */
 public class MapActivity extends AppCompatActivity implements AMapLocationListener, LocationSource {
     private MapView mapView ;
     private AMap aMap;

@@ -6,6 +6,9 @@ import java.util.List;
  * Created by dllo on 17/2/28.
  */
 
+/**
+ * 语音工具类
+ */
 public class DictationResult {
     private String sn;
     private String ls;
