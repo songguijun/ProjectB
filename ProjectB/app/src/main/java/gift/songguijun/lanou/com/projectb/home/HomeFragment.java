@@ -19,11 +19,11 @@ import java.util.List;
 import java.util.Map;
 
 import gift.songguijun.lanou.com.projectb.R;
-<<<<<<< HEAD
+
 import gift.songguijun.lanou.com.projectb.util.Constant;
-=======
+
 import gift.songguijun.lanou.com.projectb.bean.HomeBean;
->>>>>>> e1a860c1860e503550c199e8aecbb5b21ccebba8
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -34,7 +34,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by dllo on 17/2/20.
  */
 
-<<<<<<< HEAD
+
 public class HomeFragment extends Fragment implements XBanner.XBannerAdapter{
     private ListView lvHome ;
     private Retrofit retrofit ;
@@ -45,29 +45,24 @@ public class HomeFragment extends Fragment implements XBanner.XBannerAdapter{
     private View viewBanner;
     private GridView gvHead ;
     private View viewHead;
-=======
-/**
- * 主页
- */
 
-public class HomeFragment extends Fragment {
-    private ListView lvHome;
-    private Retrofit retrofit;
->>>>>>> e1a860c1860e503550c199e8aecbb5b21ccebba8
+
+
+
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-<<<<<<< HEAD
+
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_home,container,false);
         viewHead = LayoutInflater.from(getContext()).inflate(R.layout.home_head , container , false);
         gvHead = (GridView) viewHead.findViewById(R.id.gv_home_head);
         viewBanner = LayoutInflater.from(getContext()).inflate(R.layout.banner , container , false);
         xBanner = (XBanner) viewBanner.findViewById(R.id.banner);
-=======
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_home, container, false);
->>>>>>> e1a860c1860e503550c199e8aecbb5b21ccebba8
+
+
+
         return view;
     }
 
@@ -104,7 +99,7 @@ public class HomeFragment extends Fragment {
                 List<HomeBean.DataBeanX> list = bean.getData();
                 HomeListviewAdapter listAdapter = new HomeListviewAdapter(getContext());
                 listAdapter.setData(list);
-<<<<<<< HEAD
+
                     lvHome.setAdapter(listAdapter);
                 for (int i = 0; i < bean.getData().size(); i++) {
                     dataPic.add(bean.getData().get(0).getData().get(i).getPosterPic());
@@ -121,10 +116,6 @@ public class HomeFragment extends Fragment {
                 gvHead.setAdapter(homeHeadAdapter);
                 lvHome.addHeaderView(viewHead);
 
-
-=======
-                lvHome.setAdapter(listAdapter);
->>>>>>> e1a860c1860e503550c199e8aecbb5b21ccebba8
             }
 
             @Override

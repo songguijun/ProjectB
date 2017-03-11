@@ -11,11 +11,11 @@ import java.util.Map;
 import gift.songguijun.lanou.com.projectb.R;
 import gift.songguijun.lanou.com.projectb.base.BaseFragment;
 import gift.songguijun.lanou.com.projectb.bean.VMVBean;
-<<<<<<< HEAD
+
 import gift.songguijun.lanou.com.projectb.util.Constant;
-=======
+
 import gift.songguijun.lanou.com.projectb.video.MvVideoActivity;
->>>>>>> e1a860c1860e503550c199e8aecbb5b21ccebba8
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

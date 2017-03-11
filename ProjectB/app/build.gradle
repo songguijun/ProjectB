@@ -46,18 +46,18 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
     compile 'com.google.code.gson:gson:2.2.4'
-<<<<<<< HEAD
+
     compile 'com.squareup.retrofit2:converter-gson:2.2.0'
     compile 'com.android.support:recyclerview-v7:25.0.0'
     compile 'com.xhb:xbanner:1.2.2'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'jp.wasabeef:glide-transformations:1.0.6'
     compile files('libs/lite-orm-1.9.2.jar')
-=======
+
     compile(name: 'jiecaovideoplayer-5.5.1', ext: 'aar')
     compile 'com.squareup.retrofit2:converter-gson:2.2.0'
     compile 'com.android.support:recyclerview-v7:25.0.0'
     compile files('libs/jiecaovideoplayer-5.5.1-javadoc.jar')
     compile files('libs/jiecaovideoplayer-5.5.1-sources.jar')
->>>>>>> e1a860c1860e503550c199e8aecbb5b21ccebba8
+
 }

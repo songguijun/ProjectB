@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gift.songguijun.lanou.com.projectb.R;
+import gift.songguijun.lanou.com.projectb.bean.HomeBean;
 
 /**
  * Created by dllo on 17/3/7.
@@ -69,6 +70,9 @@ public class HomeHeadAdapter extends BaseAdapter{
 
         return view;
     }
+
+
+
     class HomeHeadHolder{
         private ImageView ivHomeHead ;
         private TextView tvHomeHead ;
