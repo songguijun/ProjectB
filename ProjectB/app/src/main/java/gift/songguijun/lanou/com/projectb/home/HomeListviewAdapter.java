@@ -1,9 +1,12 @@
 package gift.songguijun.lanou.com.projectb.home;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
@@ -11,6 +14,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import gift.songguijun.lanou.com.projectb.R;
+import gift.songguijun.lanou.com.projectb.video.VideoPlayerActivity;
 
 /**
  * Created by dllo on 17/2/21.
@@ -21,15 +25,16 @@ public class HomeListviewAdapter extends BaseAdapter{
     private Context context ;
     private HomeListviewGridviewAdapter gridviewAdapter ;
 
+
     public HomeListviewAdapter(Context context) {
         this.context = context;
     }
 
-    public HomeListviewAdapter setData(List<HomeBean.DataBeanX> data) {
+    public void setData(List<HomeBean.DataBeanX> data) {
         this.data = data;
         notifyDataSetChanged();
-        return this;
     }
+
 
     @Override
     public int getCount() {
@@ -51,7 +56,7 @@ public class HomeListviewAdapter extends BaseAdapter{
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(final int position, View view, ViewGroup viewGroup) {
 
         HomeListViewHolder listViewHolder = null;
         if (view == null){
@@ -62,11 +67,21 @@ public class HomeListviewAdapter extends BaseAdapter{
             listViewHolder = (HomeListViewHolder) view.getTag();
         }
 
-        listViewHolder.tvTitle.setText(data.get(i+2).getTitle());
+        listViewHolder.tvTitle.setText(data.get(position+2).getTitle());
         gridviewAdapter = new HomeListviewGridviewAdapter(context);
-        gridviewAdapter.setData(data.get(i+2).getData());
+        gridviewAdapter.setData(data.get(position+2).getData());
         listViewHolder.gridViewHome.setAdapter(gridviewAdapter);
+        listViewHolder.gridViewHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(context, VideoPlayerActivity.class);
+                String id = data.get(position+2).getData().get(i).getVideoId()+"";
+            intent.putExtra("name",id);
+            Log.d("傻逼", id);
+            context.startActivity(intent);
 
+        }
+        });
 
 
         return view;
