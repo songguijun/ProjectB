@@ -23,12 +23,12 @@
                 android:text="节目"
                 android:button="@null"
                 android:textColor="@color/colors_button"
-                android:textSize="15sp"
+                android:textSize="@dimen/fifteen"
                 android:gravity="center"
                 />
             <View
                 android:layout_width="1dp"
-                android:layout_height="20dp"
+                android:layout_height="@dimen/twenty"
                 android:background="#b9b8b8"
                 android:layout_gravity="center_vertical"/>
 

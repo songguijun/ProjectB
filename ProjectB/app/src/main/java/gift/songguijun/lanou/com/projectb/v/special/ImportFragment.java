@@ -1,6 +1,8 @@
 package gift.songguijun.lanou.com.projectb.v.special;
 
+import android.content.Intent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.HashMap;
@@ -54,10 +56,21 @@ public class ImportFragment extends BaseFragment {
         call.enqueue(new Callback<ImportBean>() {
             @Override
             public void onResponse(Call<ImportBean> call, Response<ImportBean> response) {
-                ImportBean bean = response.body();
+                final ImportBean bean = response.body();
                 ImportListViewAdapter adapter = new ImportListViewAdapter(getContext());
                 adapter.setData(bean.getData().getVideos());
                 listView.setAdapter(adapter);
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent intent  = new Intent(getContext(),ImPortActivity.class);
+                        String title = bean.getData().getVideos().get(i).getTitle();
+                        String url = bean.getData().getVideos().get(i).getUrl();
+                        intent.putExtra("标题",title);
+                        intent.putExtra("网址",url);
+                        getContext().startActivity(intent);
+                    }
+                });
             }
 
             @Override

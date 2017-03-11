@@ -18,7 +18,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/fifty"
         android:background="#111">
         <RadioGroup
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                 android:id="@+id/rbt_home"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/five"
                 android:layout_weight="1"
                 android:button="@null"
                 android:checked="true"
@@ -38,7 +38,7 @@
                 android:id="@+id/rbt_navigation"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/five"
                 android:layout_weight="1"
                 android:button="@null"
                 android:drawableTop="@drawable/button_navigation"
@@ -48,7 +48,7 @@
                 android:id="@+id/rbt_V_notice"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/five"
                 android:layout_weight="1"
                 android:button="@null"
                 android:drawableTop="@drawable/button_v"
@@ -58,7 +58,7 @@
                 android:id="@+id/rbt_subscibe"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/five"
                 android:layout_weight="1"
                 android:button="@null"
                 android:drawableTop="@drawable/button_subscibe"
@@ -67,7 +67,7 @@
                 android:id="@+id/rbt_mine"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/five"
                 android:layout_weight="1"
                 android:button="@null"
                 android:drawableTop="@drawable/button_mine"

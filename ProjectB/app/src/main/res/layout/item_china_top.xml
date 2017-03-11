@@ -5,16 +5,16 @@
 
     <ImageView
         android:id="@+id/china_top_iv"
-        android:layout_width="150dp"
-        android:layout_height="80dp"
-        android:layout_margin="10dp"
+        android:layout_width="@dimen/one_hundred_and_fifty"
+        android:layout_height="@dimen/eighty"
+        android:layout_margin="@dimen/ten"
         />
 
     <LinearLayout
-        android:layout_width="80dp"
+        android:layout_width="@dimen/eighty"
         android:orientation="vertical"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="@dimen/thirty">
         <TextView
             android:id="@+id/china_top_title"
             android:layout_width="wrap_content"
@@ -33,11 +33,11 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="70dp"
+        android:layout_width="@dimen/seventy"
         android:orientation="vertical"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="@dimen/forty"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="@dimen/ten">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

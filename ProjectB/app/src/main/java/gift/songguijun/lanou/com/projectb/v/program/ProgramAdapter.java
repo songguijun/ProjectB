@@ -103,7 +103,7 @@ public class ProgramAdapter extends RecyclerView.Adapter {
             case THREAD:
                 holdeFirst = (MyViewHolder) holder;
                 holdeFirst.tv_title.setText(data.get(1).getData().get(position).getTitle());
-                holdeFirst.tv_count.setText(data.get(1).getData().get(0).getArtists().get(position).getArtistName());
+             //   holdeFirst.tv_count.setText(data.get(1).getData().get(1).getArtists().get(position).getArtistName());
                 holdeFirst.tv_num.setText(data.get(1).getData().get(position).getTotalView()+"");
                 holdeFirst.tv_left.setText(data.get(1).getTitle());
                 holdeFirst.tv_right.setText(data.get(1).getMoreData().getTitle());

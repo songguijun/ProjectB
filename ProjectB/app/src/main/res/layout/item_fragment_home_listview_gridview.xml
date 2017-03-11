@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_margin="2.5dp">
+        android:layout_margin="@dimen/ten">
 
     <ImageView
         android:layout_width="match_parent"
@@ -32,7 +32,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="郭美美"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="@dimen/five"
         android:gravity="center_vertical"
         android:textSize="12sp"
         android:id="@+id/tv_item_home_singer"/>

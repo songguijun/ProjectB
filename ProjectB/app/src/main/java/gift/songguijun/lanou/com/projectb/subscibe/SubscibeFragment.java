@@ -19,12 +19,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gift.songguijun.lanou.com.projectb.R;
-import gift.songguijun.lanou.com.projectb.base.BaseFragment;
 
 /**
  * Created by dllo on 17/2/20.
  */
 
+/**
+ * 自定义页
+ */
 public class SubscibeFragment extends Fragment implements View.OnClickListener {
     private TabLayout tabSubscibe ;
     private ViewPager vpSubscibe ;
@@ -68,12 +70,14 @@ public class SubscibeFragment extends Fragment implements View.OnClickListener {
             case R.id.imageview4 :
                 Intent intent = new Intent(getActivity() , VoiceActivity.class);
                 startActivity(intent);
+                Toast.makeText(getContext(), "语音模式已开启", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.imageview5 :
                 Intent intent1 = new Intent(getActivity() , MapActivity.class);
                 startActivity(intent1);
-            default:
-                Toast.makeText(getContext(), "view.getId():" + view.getId(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "定位模式已开启", Toast.LENGTH_SHORT).show();
+           // default:
+                //Toast.makeText(getContext(), "view.getId():" + view.getId(), Toast.LENGTH_SHORT).show();
                 break;
         }
     }

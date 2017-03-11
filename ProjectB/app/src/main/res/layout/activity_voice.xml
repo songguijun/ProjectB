@@ -19,12 +19,12 @@
         android:textStyle="bold"
         android:id="@+id/etText_voice"/>
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="@dimen/one_hundred_and_fifty"
+        android:layout_height="@dimen/one_hundred_and_fifty"
         android:src="@mipmap/voice"
         android:id="@+id/btn_voice"
         android:layout_gravity="center"
-        android:layout_marginTop="200dp"/>
+        android:layout_marginTop="@dimen/two_hundred"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

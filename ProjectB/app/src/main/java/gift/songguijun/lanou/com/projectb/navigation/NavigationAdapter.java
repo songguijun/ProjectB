@@ -19,6 +19,9 @@ import gift.songguijun.lanou.com.projectb.R;
  * Created by dllo on 17/2/21.
  */
 
+/**
+ * 导航页GiedView适配器
+ */
 public class NavigationAdapter extends BaseAdapter {
     private List<NavigationBean.DataBean.ContentsBean> data;
     private Context context;

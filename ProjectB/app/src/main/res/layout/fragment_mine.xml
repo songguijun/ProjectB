@@ -9,10 +9,10 @@
         android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="160dp">
+        android:layout_height="@dimen/one_hundred_and_sixty">
      <ImageView
          android:layout_width="match_parent"
-         android:layout_height="160dp"
+         android:layout_height="@dimen/one_hundred_and_sixty"
          android:background="@mipmap/blackground"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,22 +21,22 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginTop="@dimen/twenty_five"
+            android:layout_marginLeft="@dimen/fifteen"
             android:background="@mipmap/comm_avatar_nologin_default"/>
         <ImageView
             android:id="@+id/mine_login_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="@dimen/fifty"
             android:background="@mipmap/my_login_btn_normal"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="@dimen/ten"
+            android:layout_marginBottom="@dimen/two"
             android:background="@mipmap/my_register_btn_normal"/>
     </LinearLayout>
 
@@ -45,14 +45,14 @@
             android:layout_height="match_parent"
             android:text="登录账号,享受云同步"
             android:gravity="center"
-            android:layout_marginLeft="130dp"
+            android:layout_marginLeft="@dimen/one_hundred_and_thirty"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="30dp" />
+            android:layout_marginTop="@dimen/thirty" />
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="@dimen/eighty">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -69,23 +69,23 @@
     </RelativeLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="5dp"
+        android:layout_height="@dimen/five"
         android:background="#dadada"/>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:layout_height="@dimen/one_hundred_and_fifty">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="下载管理"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/ten"
             android:textColor="#111"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="查看全部"
             android:layout_alignParentRight="true"
-            android:layout_margin="10dp"/>
+            android:layout_margin="@dimen/ten"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -96,18 +96,18 @@
     </RelativeLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="5dp"
+        android:layout_height="@dimen/five"
         android:background="#dadada"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="@dimen/one_hundred_and_twenty"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginTop="@dimen/twenty_five"
+            android:layout_marginLeft="@dimen/twenty"
             android:orientation="vertical"
             android:id="@+id/mine_collect_ll"
             android:layout_weight="1">
@@ -119,15 +119,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="收藏"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="12dp"
+                android:layout_marginTop="@dimen/five"
+                android:layout_marginLeft="@dimen/twelve"
                 />
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginTop="@dimen/twenty_five"
+            android:layout_marginLeft="@dimen/twenty"
             android:orientation="vertical"
             android:layout_weight="1">
             <ImageView
@@ -138,15 +138,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="订阅"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="12dp"
+                android:layout_marginTop="@dimen/five"
+                android:layout_marginLeft="@dimen/twelve"
                 />
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginTop="@dimen/twenty_five"
+            android:layout_marginLeft="@dimen/twenty"
             android:orientation="vertical"
             android:layout_weight="1">
             <ImageView
@@ -157,14 +157,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="播放历史"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/five"
                 />
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginTop="@dimen/twenty_five"
+            android:layout_marginLeft="@dimen/twenty"
             android:orientation="vertical"
             android:layout_weight="1">
             <ImageView
@@ -175,25 +175,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="消息"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="12dp"
+                android:layout_marginTop="@dimen/five"
+                android:layout_marginLeft="@dimen/twelve"
                 />
         </LinearLayout>
 
     </LinearLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="5dp"
+        android:layout_height="@dimen/five"
         android:background="#dadada"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="@dimen/one_hundred_and_twenty"
         android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="我的悦单"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/ten"
             android:textSize="15sp"
             android:textColor="#111"/>
         <TextView
@@ -201,17 +201,17 @@
             android:layout_height="wrap_content"
             android:text="您还没有创建一个悦单~!"
             android:textColor="#19fd00"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="@dimen/ten"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="未登录,建议登录后查看自建悦单哦~!"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/ten"
             />
     </LinearLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="@dimen/twenty"
         android:background="#dadada"/>
     </LinearLayout>
 </ScrollView>

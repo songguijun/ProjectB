@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,7 +26,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.VideoView;
 
 import com.squareup.picasso.Picasso;
 
@@ -39,7 +38,6 @@ import gift.songguijun.lanou.com.projectb.R;
 import gift.songguijun.lanou.com.projectb.bean.VideoBean;
 import gift.songguijun.lanou.com.projectb.utils.DateTools;
 import gift.songguijun.lanou.com.projectb.utils.DensityUtil;
-import gift.songguijun.lanou.com.projectb.views.MyVideoView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -50,14 +48,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by dllo on 17/2/27.
  */
 
+/**
+ * 视频播放器
+ */
 public class VideoPlayerActivity extends FragmentActivity implements GestureDetector.OnGestureListener, View.OnClickListener, View.OnTouchListener {
     private SurfaceView surfaceView;
-    private ImageView btnPause, btnPlayUrl, btn;
+    private ImageView btnPause, btnPlayUrl, btn,btn_resylt;
     private ImageView btn_back;
     private SeekBar skbProgress;
     private TextView title_textView, time_tv, time_tv_video;
     private Player player;
-    private VideoView video;
     /**
      * 视频窗口的宽和高
      */
@@ -70,11 +70,9 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
     /**
      * 视频播放控件
      */
-    private MyVideoView tv_pro_play;
     /**
      * 手势改变视频进度,音量,亮度
      */
-    private int anInt;
 
     private RelativeLayout root_layout;// 根布局
     private RecyclerView mostPeople_rv;
@@ -98,7 +96,7 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
     private static final int GESTURE_MODIFY_VOLUME = 2;
     private static final int GESTURE_MODIFY_BRIGHT = 3;
     /**
-     * Called when the activity is first created.
+     * Called when the activity_test is first created.
      */
     private Retrofit retrofit;
     final String key1 = "App-Id";
@@ -110,6 +108,7 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
     final String key3 = "Device-V";
     final String value3 = "aU9TXzEwLjEuMV8xMjQyKjIyMDhfMTAwMDAxMDAwX2lQaG9uZTcsMQ==";
     private String url;
+    private String mvUlr;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -119,6 +118,7 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
         int flag = WindowManager.LayoutParams.FLAG_FULLSCREEN;
         Window window = VideoPlayerActivity.this.getWindow();
         window.setFlags(flag, flag);
+        btn_resylt = (ImageView) findViewById(R.id.btn_result);
         related_girdView = (GridView) findViewById(R.id.related_girdView);
         relatedPlayList_gidView = (GridView) findViewById(R.id.relatedPlayList_girdView);
         artistOther_girdView = (GridView) findViewById(R.id.artistOther_girdView);
@@ -143,37 +143,12 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
         btn_back.setOnClickListener(this);
         btn = (ImageView) findViewById(R.id.btn);
         btn.setOnClickListener(this);
+        btn_resylt.setOnClickListener(this);
         skbProgress = (SeekBar) this.findViewById(R.id.skbProgress);
         skbProgress.setOnSeekBarChangeListener(new SeekBarChangeEvent());
         player = new Player(surfaceView, skbProgress);
         btnPlayUrl.setVisibility(View.INVISIBLE);
-
-
-
-//         surfaceView.setOnClickListener(new View.OnClickListener() {
-//             @Override
-//             public void onClick(View view) {
-//
-//                     video_rl.setVisibility(View.INVISIBLE);
-//                     linearLayout.setVisibility(View.INVISIBLE);
-//
-//             }
-//
-//
-//         });
-//        surfaceView.setOnLongClickListener(new View.OnLongClickListener() {
-//            @Override
-//            public boolean onLongClick(View view) {
-//                video_rl.setVisibility(View.VISIBLE);
-//                linearLayout.setVisibility(View.VISIBLE);
-//                return true;
-//            }
-//        });
-//
-//
-//           video_rl.setVisibility(View.VISIBLE);
-//           linearLayout.setVisibility(View.VISIBLE);
-
+        btn_resylt.setVisibility(View.INVISIBLE);
         initView();
         Intent intent = getIntent();
         String id = intent.getStringExtra("name");
@@ -196,7 +171,6 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
                 tv_second_time.setText(videoBean.getData().getRegdate());
                 tv_second_author.setText(videoBean.getData().getCreator().getNickName());
                 Picasso.with(VideoPlayerActivity.this).load(videoBean.getData().getArtists().get(0).getArtistAvatar()).into(iv_video_head);
-                Log.d("我的天", url);
                 MostPeopleAdapter adapter = new MostPeopleAdapter(VideoPlayerActivity.this);
                 adapter.setData(videoBean.getData().getMostPeopleVideos());
                 mostPeople_rv.setAdapter(adapter);
@@ -212,30 +186,35 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
                 relatedAdapter.setData(videoBean.getData().getRelatedVideos());
                 related_girdView.setAdapter(relatedAdapter);
                 initDate();
-
             }
-
             @Override
             public void onFailure(Call<VideoBean> call, Throwable t) {
             }
         });
 
+
     }
 
-    int count = 0;
-    private Handler handlerStop = new Handler();
-    boolean stopThread = false;
+
+
+
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn:
-                    this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-                 root_layout.setMinimumHeight(1000);
+                this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+                btn_resylt.setVisibility(View.VISIBLE);
+                btn.setVisibility(View.INVISIBLE);
                 break;
             case R.id.video_back:
                 onBackPressed();
                 player.stop();
+                break;
+            case R.id.btn_result:
+                this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                btn_resylt.setVisibility(View.INVISIBLE);
+                btn.setVisibility(View.VISIBLE);
                 break;
         }
     }
@@ -243,31 +222,47 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {//横屏
-            ViewGroup.LayoutParams lp = surfaceView.getLayoutParams();
-            lp.height = ViewGroup.LayoutParams.MATCH_PARENT;
-            lp.width = ViewGroup.LayoutParams.MATCH_PARENT;
-            System.out.print(lp.width);
-            surfaceView.setLayoutParams(lp);
+           setVideoParams(player.mediaPlayer,true);
         } else if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {//竖屏
-            ViewGroup.LayoutParams lp = surfaceView.getLayoutParams();
-            lp.height = ViewGroup.LayoutParams.MATCH_PARENT;
-            lp.width = ViewGroup.LayoutParams.MATCH_PARENT;
-            System.out.print(lp.width);
-            surfaceView.setLayoutParams(lp);
+           setVideoParams(player.mediaPlayer,false);
         }
     }
+    public void setVideoParams(MediaPlayer mediaPlayer, boolean isLand) {
+        //获取surfaceView父布局的参数
+        ViewGroup.LayoutParams rl_paramters = root_layout.getLayoutParams();
+        //获取SurfaceView的参数
+        ViewGroup.LayoutParams sv_paramters = surfaceView.getLayoutParams();
+        //设置宽高比为16/9
+        float screen_widthPixels = getResources().getDisplayMetrics().widthPixels;
+        float screen_heightPixels = getResources().getDisplayMetrics().widthPixels * 9f / 16f;
+        //取消全屏
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        if (isLand) {
+            screen_heightPixels = getResources().getDisplayMetrics().heightPixels;
+            //设置全屏
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        }
+        rl_paramters.width = (int) screen_widthPixels;
+        rl_paramters.height = (int) screen_heightPixels;
 
-//    int currentNum = 1;
-//    private Handler handler = new Handler(new Handler.Callback() {
-//        @Override
-//        public boolean handl eMessage(Message message) {
-//            // 11020230
-//            Log.d("zzzd", "getCurrentPosition():" + player.mediaPlayer.getCurrentPosition());
-//            skbProgress.setProgress(currentNum++);
-//            return false;
-//        }
-//    });
+        //获取MediaPlayer的宽高
+        int videoWidth = mediaPlayer.getVideoWidth();
+        int videoHeight = mediaPlayer.getVideoHeight();
 
+        float video_por = videoWidth / videoHeight;
+        float screen_por = screen_widthPixels / screen_heightPixels;
+        //16:9    16:12
+        if (screen_por > video_por) {
+            sv_paramters.height = (int) screen_heightPixels;
+            sv_paramters.width = (int) (screen_heightPixels * screen_por);
+        } else {
+            //16:9  19:9
+            sv_paramters.width = (int) screen_widthPixels;
+            sv_paramters.height = (int) (screen_widthPixels / screen_por);
+        }
+        root_layout.setLayoutParams(rl_paramters);
+        surfaceView.setLayoutParams(sv_paramters);
+    }
     private void initView() {
         root_layout = (RelativeLayout) findViewById(R.id.root_layout);
         gesture_volume_layout = (RelativeLayout) findViewById(R.id.gesture_volume_layout);
@@ -297,27 +292,11 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
             }
         });
     }
-
     private void initDate() {
         player.playUrl(url);
         Log.d("zzzd", "getDuration():" + player.mediaPlayer.getDuration());
         int secondTime = player.mediaPlayer.getDuration() / 1000;
         skbProgress.setMax(secondTime);
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                while (true) {
-//                    if (player.mediaPlayer.isPlaying()) {
-//                        try {
-//                            Thread.sleep(1000);
-//                            handler.sendEmptyMessage(001);
-//                        } catch (InterruptedException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                }
-//            }
-//        }).start();
     }
 
 
@@ -332,7 +311,6 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
         }
         return gestureDetector.onTouchEvent(motionEvent);
     }
-
     class ClickEvent implements View.OnClickListener {
 
         @Override
@@ -349,10 +327,8 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
             }
         }
     }
-
     class SeekBarChangeEvent implements SeekBar.OnSeekBarChangeListener {
         int progress;
-
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress,
                                       boolean fromUser) {
@@ -363,13 +339,10 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
 
 
         }
-
-
         @Override
         public void onStartTrackingTouch(SeekBar seekBar) {
 
         }
-
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
             // seekTo()的参数是相对与影片时间的数字，而不是与seekBar.getMax()相对的数字
@@ -377,7 +350,6 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
 
         }
     }
-
     private void initTime() {
         String time = player.mediaPlayer.getDuration() + "";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm:ss");
@@ -385,7 +357,6 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
         String newTime = simpleDateFormat.format(date);
         time_tv.setText(newTime);
     }
-
     private void initTimes() {
         String time = player.mediaPlayer.getCurrentPosition() + "";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm:ss");
@@ -393,13 +364,11 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
         String newTime = simpleDateFormat.format(date);
         time_tv_video.setText(newTime);
     }
-
     @Override
     public boolean onDown(MotionEvent e) {
         firstScroll = true;// 设定是触摸屏幕后第一次scroll的标志
         return false;
     }
-
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
         float mOldX = e1.getX(), mOldY = e1.getY();
@@ -429,6 +398,7 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
         }
         // 如果每次触摸屏幕后第一次scroll是调节进度，那之后的scroll事件都处理音量进度，直到离开屏幕执行下一次操作
         if (GESTURE_FLAG == GESTURE_MODIFY_PROGRESS) {
+            playingTime = player.mediaPlayer.getCurrentPosition();
             // distanceX=lastScrollPositionX-currentScrollPositionX，因此为正时是快进
             if (Math.abs(distanceX) > Math.abs(distanceY)) {// 横向移动大于纵向移动
                 if (distanceX >= DensityUtil.dip2px(this, STEP_PROGRESS)) {// 快退，用步长控制改变速度，可微调
@@ -449,7 +419,7 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
                 if (playingTime < 0) {
                     playingTime = 0;
                 }
-                // player.mediaPlayer.seekTo(playingTime);
+                 player.mediaPlayer.seekTo(playingTime);
                 geture_tv_progress_time.setText(DateTools.getTimeStr(playingTime) + "/" + DateTools.getTimeStr(videoTotalTime));
             }
         }
@@ -498,38 +468,21 @@ public class VideoPlayerActivity extends FragmentActivity implements GestureDete
         firstScroll = false;// 第一次scroll执行完成，修改标志
         return false;
     }
-
     @Override
     public boolean onSingleTapUp(MotionEvent e) {
         return false;
     }
-
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
         return false;
     }
-
     @Override
     public void onLongPress(MotionEvent e) {
     }
-
     @Override
     public void onShowPress(MotionEvent e) {
     }
 
 
-    private void fullscreen(boolean enable) {
-        if (enable) { //显示状态栏
-            WindowManager.LayoutParams lp = getWindow().getAttributes();
-            lp.flags |= WindowManager.LayoutParams.FLAG_FULLSCREEN;
-            getWindow().setAttributes(lp);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        } else { //隐藏状态栏
-            WindowManager.LayoutParams lp = getWindow().getAttributes();
-            lp.flags &= (~WindowManager.LayoutParams.FLAG_FULLSCREEN);
-            getWindow().setAttributes(lp);
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }
-    }
 
 }

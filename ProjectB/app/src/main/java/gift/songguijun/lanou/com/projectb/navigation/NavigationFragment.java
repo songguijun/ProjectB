@@ -30,6 +30,9 @@ import gift.songguijun.lanou.com.projectb.R;
  * Created by dllo on 17/2/20.
  */
 
+/**
+ * 导航页
+ */
 public class NavigationFragment extends Fragment {
     private GridView gridView;
     final String headUrl = Constant.NAVIGATION_URL;
