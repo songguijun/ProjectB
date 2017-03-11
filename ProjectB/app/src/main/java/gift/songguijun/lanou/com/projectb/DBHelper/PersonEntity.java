@@ -20,7 +20,11 @@ private int id ;
     private String singer ;
     private String pic ;
 
-    public PersonEntity( String name, String singer, String pic) {
+
+    public PersonEntity() {
+    }
+
+    public PersonEntity(String name, String singer, String pic) {
         this.name = name;
         this.singer = singer;
         this.pic = pic;

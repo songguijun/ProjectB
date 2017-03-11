@@ -109,6 +109,7 @@
             android:layout_marginTop="25dp"
             android:layout_marginLeft="20dp"
             android:orientation="vertical"
+            android:id="@+id/mine_collect_ll"
             android:layout_weight="1">
             <ImageView
                 android:layout_width="wrap_content"
