@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:id="@+id/speical_ll">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/album_chart_left"
+        android:layout_marginTop="@dimen/ten"/>
+    <ImageView
+        android:id="@+id/speical_iv"
+        android:layout_width="@dimen/ninety"
+        android:layout_height="@dimen/ninety"
+        android:layout_marginTop="@dimen/twelve"
+        android:scaleType="fitXY"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/ten">
+
+        <TextView
+            android:id="@+id/special_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dasdadsasd"
+            android:maxLines="1"
+            android:maxLength="12"
+            android:ellipsize="end"
+            android:textSize="10sp"
+            android:textColor="#111"/>
+
+        <TextView
+            android:id="@+id/special_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1sad"
+            android:layout_marginLeft="@dimen/ten"/>
+    </LinearLayout>
+        <TextView
+            android:id="@+id/special_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="30sp"
+            android:layout_marginLeft="@dimen/fifty"
+            android:layout_marginTop="@dimen/forty"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/thirty"
+            />
+
+    </RelativeLayout>
+</LinearLayout>

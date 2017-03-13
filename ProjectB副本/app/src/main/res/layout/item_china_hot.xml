@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/china_hot_iv"
+        android:layout_width="@dimen/one_hundred"
+        android:layout_height="@dimen/one_hundred"
+        android:layout_margin="@dimen/ten"
+        android:scaleType="fitXY"
+        />
+
+    <LinearLayout
+        android:layout_width="@dimen/eighty"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ten"
+        android:layout_marginLeft="@dimen/ten">
+        <TextView
+            android:id="@+id/china_hot_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textSize="15sp"
+            android:text="adsasdads"
+            />
+        <TextView
+            android:id="@+id/china_hot_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="asdasd"
+            android:textSize="10sp"
+            />
+        <TextView
+            android:id="@+id/china_hot_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="asdasd"
+            android:textSize="10sp"
+            />
+        <TextView
+            android:id="@+id/china_hot_peak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="asdasd"
+            android:textSize="10sp"
+            />
+        <TextView
+            android:id="@+id/china_hot_wks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="asdasd"
+            android:textSize="10sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/seventy"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/ninety"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/thirty">
+
+
+        <TextView
+            android:id="@+id/china_hot_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="@dimen/thirty"
+            android:layout_gravity="center"/>
+
+
+    </LinearLayout>
+</LinearLayout>

@@ -15,6 +15,8 @@ import android.view.animation.BounceInterpolator;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.xys.libzxing.zxing.activity.CaptureActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,6 +81,10 @@ public class SubscibeFragment extends Fragment implements View.OnClickListener {
            // default:
                 //Toast.makeText(getContext(), "view.getId():" + view.getId(), Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.imageview6:
+                Intent intent2 = new Intent(getActivity() , CaptureActivity.class);
+                startActivityForResult(intent2 , 0);
+
         }
     }
     private void closeAnim() {
@@ -125,6 +131,21 @@ public class SubscibeFragment extends Fragment implements View.OnClickListener {
             set.playTogether(animator, animator2);
             set.setDuration(1000);
             set.start();
+        }
+    }
+
+//    @Override|0
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Bundle bundle = data.getExtras();
+        String result = bundle.getString("result");
+        if (requestCode ==  0 && data != null){
+            Intent intent = new Intent(getContext(), WebViewActivity.class);
+            intent.putExtra("webView",result);
+            startActivity(intent);
+            Toast.makeText(getContext(), result, Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(getContext(), result, Toast.LENGTH_SHORT).show();
         }
     }
 }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/most_people_iv"
+        android:layout_width="@dimen/one_hundred_and_sixty"
+        android:layout_height="@dimen/one_hundred"
+        android:scaleType="fitXY"
+        android:layout_marginLeft="@dimen/ten"
+        android:layout_marginRight="@dimen/ten"
+        />
+    <TextView
+        android:id="@+id/most_people_tv_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#fff"
+        android:maxLength="10"
+        android:text="asdasdasd"
+    android:layout_marginLeft="@dimen/ten"/>
+    <TextView
+        android:id="@+id/most_people_tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#7e000000"
+        android:text="加载中~~~"
+        android:textSize="12sp"
+        android:layout_marginLeft="@dimen/ten"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#7e000000"
+        android:text="播放次数:"
+        android:textSize="12sp"
+        android:layout_marginLeft="@dimen/ten"/>
+    <TextView
+        android:id="@+id/most_people_tv_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#7e000000"
+        android:text="加载中~~~"
+        android:textSize="12sp"
+        android:layout_marginLeft="@dimen/ten"/>
+    </LinearLayout>
+</LinearLayout>

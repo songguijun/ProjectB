@@ -32,7 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".video.VideoPlayerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
@@ -43,25 +42,26 @@
 
         <meta-data
             android:name="com.amap.api.v2.apikey"
+            android:value="8c1c89a581edf17c3c2404d14354154c" />
+
+        <activity android:name=".mine.CollectActivity" />
+        <activity
+            android:name=".video.VideoPlayerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity android:name=".subscibe.VoiceActivity" />
+        <activity android:name=".subscibe.MapActivity" />
+        <activity android:name=".video.MvVideoActivity" />
+        <activity android:name=".v.special.ImPortActivity" />
+        <activity android:name=".v.special.HinterLandActivity" />
+        <activity android:name=".v.china.ChinaActivity" />
+
+        <service android:name="com.amap.api.location.APSService" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
             android:value="8c1c89a581edf17c3c2404d14354154c"></meta-data>
 
-        <activity android:name=".mine.CollectActivity"></activity>
-
-
-        <activity android:name=".video.VideoPlayerActivity" android:configChanges="orientation|keyboardHidden|screenSize"/>
-
-        <activity android:name=".subscibe.VoiceActivity"></activity>
-        <activity android:name=".subscibe.MapActivity"/>
-        <activity android:name=".video.MvVideoActivity"/>
-        <activity android:name=".v.special.ImPortActivity"/>
-        <activity android:name=".v.special.HinterLandActivity"/>
-        <activity android:name=".v.china.ChinaActivity"/>
-        <service android:name="com.amap.api.location.APSService"></service>
-
-        <meta-data android:name="com.amap.api.v2.apikey" android:value="8c1c89a581edf17c3c2404d14354154c">
-        </meta-data>
-
-
+        <activity android:name=".subscibe.WebViewActivity"></activity>
     </application>
 
 </manifest>

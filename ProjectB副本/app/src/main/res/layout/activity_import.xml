@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fifty"
+        android:orientation="horizontal"
+        android:background="#111">
+        <ImageView
+            android:id="@+id/import_iv_finsh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/login_back_btn_normal"
+            android:layout_marginTop="@dimen/five"/>
+        <TextView
+            android:id="@+id/tv_import"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:maxLines="15"
+            android:textColor="#fff"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:layout_marginLeft="@dimen/forty"
+            />
+
+    </LinearLayout>
+    <WebView
+        android:id="@+id/import_wb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
